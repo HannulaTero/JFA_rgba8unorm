@@ -6,7 +6,9 @@ Dimensions must be between 1 to 256, as values are stored 8bit accuracy.
 	- Maximum size is then 256 x 256. 
 	- Given seed texture is scaled down.
 
-Coordinate is XY coordinate to closest seed.
+Coordinate is XY coordinate to closest seed value.
+
+Signed distance positive is how far outside the seed, and negative how far inside the seed.
 
 Surfaces:
 	temp	General helper surface for calculations. Kept alive to avoid recreating.
