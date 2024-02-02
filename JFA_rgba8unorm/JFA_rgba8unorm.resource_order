@@ -1,0 +1,10 @@
+{
+  "FolderOrderSettings": [
+    {"name":"TiteJFA Example","order":1,"path":"folders/TiteJFA Example.yy",},
+    {"name":"TiteJFA","order":2,"path":"folders/TiteJFA.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"shdTiteJFA","order":1,"path":"shaders/shdTiteJFA/shdTiteJFA.yy",},
+    {"name":"objTiteJFA_Example","order":1,"path":"objects/objTiteJFA_Example/objTiteJFA_Example.yy",},
+  ],
+}

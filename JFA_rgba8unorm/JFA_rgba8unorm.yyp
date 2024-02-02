@@ -1,0 +1,36 @@
+{
+  "resourceType": "GMProject",
+  "resourceVersion": "1.7",
+  "name": "JFA_rgba8unorm",
+  "AudioGroups": [
+    {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
+  ],
+  "configs": {
+    "children": [],
+    "name": "Default",
+  },
+  "defaultScriptType": 1,
+  "Folders": [
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA Example","folderPath":"folders/TiteJFA Example.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA","folderPath":"folders/TiteJFA.yy",},
+  ],
+  "IncludedFiles": [],
+  "isEcma": false,
+  "LibraryEmitters": [],
+  "MetaData": {
+    "IDEVersion": "2023.11.1.129",
+  },
+  "resources": [
+    {"id":{"name":"scrTiteJFA","path":"scripts/scrTiteJFA/scrTiteJFA.yy",},},
+    {"id":{"name":"shdTiteJFA","path":"shaders/shdTiteJFA/shdTiteJFA.yy",},},
+    {"id":{"name":"objTiteJFA_Example","path":"objects/objTiteJFA_Example/objTiteJFA_Example.yy",},},
+    {"id":{"name":"roomTiteJFA_Example","path":"rooms/roomTiteJFA_Example/roomTiteJFA_Example.yy",},},
+  ],
+  "RoomOrderNodes": [
+    {"roomId":{"name":"roomTiteJFA_Example","path":"rooms/roomTiteJFA_Example/roomTiteJFA_Example.yy",},},
+  ],
+  "templateType": "game",
+  "TextureGroups": [
+    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
+  ],
+}
