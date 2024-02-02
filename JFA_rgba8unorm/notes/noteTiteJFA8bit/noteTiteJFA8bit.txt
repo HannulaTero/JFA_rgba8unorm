@@ -98,6 +98,7 @@ Coordinate mapping does not explicitly store whether it stores seed coordinate o
 Field has normals and distance field, values are encoded.
  - If used elsewhere, such as other shader, you can for example copy encoding functions.
  - You can make use the fact, that 0.5 is middle value for both.
+ - Distance field can actually look better when you downscale it!
 
 Update -method always redoes coordinate mapping with given seed. 
  - There are optional actions: fill, field & vertex

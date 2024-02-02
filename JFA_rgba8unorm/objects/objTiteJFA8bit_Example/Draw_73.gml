@@ -23,5 +23,5 @@ var _texture = surface_get_texture(flooder.surfaces.field);
 shader_set(_shader);
 shader_set_uniform_f(_uniTime, current_time / 1000.0);
 texture_set_stage(_texField, _texture);
-draw_surface(flooder.surfaces.fill, room_width - 320, 0.0);
+draw_surface_stretched(flooder.surfaces.fill, room_width - 320, 32.0, 256, 256);
 shader_reset();

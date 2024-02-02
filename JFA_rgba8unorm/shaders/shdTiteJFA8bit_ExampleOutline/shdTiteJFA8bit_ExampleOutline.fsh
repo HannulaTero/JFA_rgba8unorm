@@ -16,8 +16,9 @@ void main()
 	float dist = (field.z - 0.5) * 2.0;
 	
 	// Get original the surface, draw black line moving. Ugly example though.
+	float factor = 16.0;
 	vec4 color = texture2D(gm_BaseTexture, v_vTexcoord);
-	color.rgb -= max(0.0, sin(TAU * dist - uniTime) * 4.0  - 3.0);
+	color.rgb -= max(0.0, sin(TAU * dist - uniTime) * factor - (factor - 1.0));
 	
 	// Show the result.
     gl_FragColor = v_vColour * color;
