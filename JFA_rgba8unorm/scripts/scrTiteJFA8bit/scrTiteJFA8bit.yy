@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scrTiteJFA",
+  "name": "scrTiteJFA8bit",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "TiteJFA",
-    "path": "folders/TiteJFA.yy",
+    "name": "TiteJFA 8bit",
+    "path": "folders/TiteJFA 8bit.yy",
   },
 }

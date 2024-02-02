@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "objTiteJFA_Example",
+  "name": "objTiteJFA8bit_Example",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "TiteJFA Example",
-    "path": "folders/TiteJFA Example.yy",
+    "name": "TiteJFA 8bit Example",
+    "path": "folders/TiteJFA 8bit Example.yy",
   },
   "parentObjectId": null,
   "persistent": false,

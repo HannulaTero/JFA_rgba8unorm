@@ -1,0 +1,22 @@
+
+JUMP FLOOD ALGORITHM - RGBA8UNORM
+	by Tero Hannula for Cookbook jam.
+
+Dimensions must be between 1 to 256, as values are stored 8bit accuracy.
+	- Maximum size is then 256 x 256. 
+	- Given seed texture is scaled down.
+
+Coordinate is XY coordinate to closest seed.
+
+Surfaces:
+	temp	General helper surface for calculations. Kept alive to avoid recreating.
+	coord	Coordinate mapping. 
+			-> Closest coordinates for seed are stored in RG components.
+			-> Closest coordinates for reverse seed are stored in BA components.
+	fill	Fills empty areas with seed, which approximates Voronoi Diagram.
+	field	Normal and signed distance field. 
+
+Method calls should be done in Draw-events, as this uses shaders for calculations.
+
+Uses builder pattern.
+	- Methods return struct itself, so mehtod calls can be chained.

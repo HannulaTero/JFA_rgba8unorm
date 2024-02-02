@@ -1,10 +1,11 @@
 {
   "FolderOrderSettings": [
-    {"name":"TiteJFA Example","order":1,"path":"folders/TiteJFA Example.yy",},
-    {"name":"TiteJFA","order":2,"path":"folders/TiteJFA.yy",},
+    {"name":"TiteJFA 8bit Example","order":1,"path":"folders/TiteJFA 8bit Example.yy",},
+    {"name":"TiteJFA 8bit","order":2,"path":"folders/TiteJFA 8bit.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"shdTiteJFA","order":1,"path":"shaders/shdTiteJFA/shdTiteJFA.yy",},
-    {"name":"objTiteJFA_Example","order":1,"path":"objects/objTiteJFA_Example/objTiteJFA_Example.yy",},
+    {"name":"noteTiteJFA8bit","order":2,"path":"notes/noteTiteJFA8bit/noteTiteJFA8bit.yy",},
+    {"name":"shdTiteJFA8bit","order":1,"path":"shaders/shdTiteJFA8bit/shdTiteJFA8bit.yy",},
+    {"name":"objTiteJFA8bit_Example","order":1,"path":"objects/objTiteJFA8bit_Example/objTiteJFA8bit_Example.yy",},
   ],
 }

@@ -11,8 +11,8 @@
   },
   "defaultScriptType": 1,
   "Folders": [
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA Example","folderPath":"folders/TiteJFA Example.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA","folderPath":"folders/TiteJFA.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA 8bit Example","folderPath":"folders/TiteJFA 8bit Example.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TiteJFA 8bit","folderPath":"folders/TiteJFA 8bit.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -21,13 +21,14 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
-    {"id":{"name":"scrTiteJFA","path":"scripts/scrTiteJFA/scrTiteJFA.yy",},},
-    {"id":{"name":"shdTiteJFA","path":"shaders/shdTiteJFA/shdTiteJFA.yy",},},
-    {"id":{"name":"objTiteJFA_Example","path":"objects/objTiteJFA_Example/objTiteJFA_Example.yy",},},
-    {"id":{"name":"roomTiteJFA_Example","path":"rooms/roomTiteJFA_Example/roomTiteJFA_Example.yy",},},
+    {"id":{"name":"noteTiteJFA8bit","path":"notes/noteTiteJFA8bit/noteTiteJFA8bit.yy",},},
+    {"id":{"name":"scrTiteJFA8bit","path":"scripts/scrTiteJFA8bit/scrTiteJFA8bit.yy",},},
+    {"id":{"name":"shdTiteJFA8bit","path":"shaders/shdTiteJFA8bit/shdTiteJFA8bit.yy",},},
+    {"id":{"name":"objTiteJFA8bit_Example","path":"objects/objTiteJFA8bit_Example/objTiteJFA8bit_Example.yy",},},
+    {"id":{"name":"roomTiteJFA8bit_Example","path":"rooms/roomTiteJFA8bit_Example/roomTiteJFA8bit_Example.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"roomTiteJFA_Example","path":"rooms/roomTiteJFA_Example/roomTiteJFA_Example.yy",},},
+    {"roomId":{"name":"roomTiteJFA8bit_Example","path":"rooms/roomTiteJFA8bit_Example/roomTiteJFA8bit_Example.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
