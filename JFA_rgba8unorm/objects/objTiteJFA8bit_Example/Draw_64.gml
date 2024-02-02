@@ -1,0 +1,91 @@
+/// @desc EDIT THE SEED
+
+// Make sure seed surface exists.
+if (!surface_exists(seedSurf))
+{
+	seedSurf = surface_create(seedW, seedH);
+}
+
+// Mouse position related to seed. 
+// Assmumes it is drawn at x/y position, also rescaled.
+var _x = (mouse_x - x) * seedW / image_xscale;
+var _y = (mouse_y - y) * seedH / image_yscale;
+
+// Edit the seed.
+surface_set_target(seedSurf);
+{
+	// Draw on the seed.
+	if (device_mouse_check_button(0, mb_left)) 
+	{
+		if (radius >= 1) 
+		{
+			draw_circle_color(_x, _y, radius, color, color, false);
+		} else {
+			draw_point_color(_x, _y, color);
+		}
+	}
+
+	// Erase from the seed.
+	if (device_mouse_check_button(0, mb_right)) 
+	{
+		gpu_set_blendmode(bm_subtract);
+		draw_circle_color(_x, _y, radius + 8, color, color, false);
+		gpu_set_blendmode(bm_normal);
+	}
+}
+surface_reset_target();
+
+
+// Visualize mouse.
+draw_circle_color(mouse_x, mouse_y, radius+2, color, color, true);
+draw_circle_color(mouse_x, mouse_y, radius, c_black, c_black, true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

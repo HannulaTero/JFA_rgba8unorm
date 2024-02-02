@@ -4,7 +4,9 @@
     {"name":"TiteJFA 8bit","order":2,"path":"folders/TiteJFA 8bit.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"shdTiteJFA8bit_ExampleOutline","order":3,"path":"shaders/shdTiteJFA8bit_ExampleOutline/shdTiteJFA8bit_ExampleOutline.yy",},
     {"name":"noteTiteJFA8bit","order":2,"path":"notes/noteTiteJFA8bit/noteTiteJFA8bit.yy",},
+    {"name":"sprTiteJFA8bit_Background","order":2,"path":"sprites/sprTiteJFA8bit_Background/sprTiteJFA8bit_Background.yy",},
     {"name":"shdTiteJFA8bit","order":1,"path":"shaders/shdTiteJFA8bit/shdTiteJFA8bit.yy",},
     {"name":"objTiteJFA8bit_Example","order":1,"path":"objects/objTiteJFA8bit_Example/objTiteJFA8bit_Example.yy",},
   ],

@@ -107,7 +107,6 @@ function TiteJFA8bit(_w=256, _h=256) constructor
 		self.surfaces.coord = self.Verify(self.surfaces.coord);
 		shader_set_uniform_f(__uniSize, _w, _h);
 		shader_set_uniform_f(__uniTexel, 1.0/_w, 1.0/_h);
-		shader_set_uniform_f(__uniJumpDist, self.jumpDist);
 		shader_set_uniform_f(__uniJumpMax, self.jumpMax);
 		
 		// Get the seed coordinates into helper surface.
@@ -120,8 +119,8 @@ function TiteJFA8bit(_w=256, _h=256) constructor
 		// Get Coordinate mapping by Jump Flood passes.
 		// Ping-pongs between helper and coordinate mapping.
 		shader_set_uniform_i(__uniAction, 1);
-		var _jumpW = min(_w * 0.5, self.jumpMax);
-		var _jumpH = min(_h * 0.5, self.jumpMax);
+		var _jumpW = min(_w, self.jumpMax);
+		var _jumpH = min(_h, self.jumpMax);
 		var _tempA = self.surfaces.temp;
 		var _tempB = self.surfaces.coord;
 		var _tempC = self.surfaces.coord;
@@ -142,7 +141,10 @@ function TiteJFA8bit(_w=256, _h=256) constructor
 		// Make sure last pass is saved into coordinate mapping.
 		if (self.surfaces.coord != _tempC) 
 		{
-			surface_copy(self.surfaces.coord, 0, 0, _tempC);
+			shader_set_uniform_f(__uniJumpDist, 1, 1);
+			surface_set_target(self.surfaces.coord);
+			draw_surface(_tempC, 0, 0);
+			surface_reset_target();
 		}
 		
 		// Optional: Generate surface which is filled.

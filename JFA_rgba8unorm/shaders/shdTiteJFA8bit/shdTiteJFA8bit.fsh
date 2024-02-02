@@ -206,6 +206,7 @@ void ActionVertex()
 	bool _reverseIsVertex = (_reverseDifference >= 2.0);
 	
 	// Save the results.
+	_reverseIsVertex = false; // Currently not needed, plus output looks better without it.
 	gl_FragData[0] = vec4(_regularIsVertex, _reverseIsVertex, 0.5, 1.0);
 }
 

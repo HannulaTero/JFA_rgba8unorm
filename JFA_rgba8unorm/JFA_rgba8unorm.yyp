@@ -21,8 +21,10 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"shdTiteJFA8bit_ExampleOutline","path":"shaders/shdTiteJFA8bit_ExampleOutline/shdTiteJFA8bit_ExampleOutline.yy",},},
     {"id":{"name":"noteTiteJFA8bit","path":"notes/noteTiteJFA8bit/noteTiteJFA8bit.yy",},},
     {"id":{"name":"scrTiteJFA8bit","path":"scripts/scrTiteJFA8bit/scrTiteJFA8bit.yy",},},
+    {"id":{"name":"sprTiteJFA8bit_Background","path":"sprites/sprTiteJFA8bit_Background/sprTiteJFA8bit_Background.yy",},},
     {"id":{"name":"shdTiteJFA8bit","path":"shaders/shdTiteJFA8bit/shdTiteJFA8bit.yy",},},
     {"id":{"name":"objTiteJFA8bit_Example","path":"objects/objTiteJFA8bit_Example/objTiteJFA8bit_Example.yy",},},
     {"id":{"name":"roomTiteJFA8bit_Example","path":"rooms/roomTiteJFA8bit_Example/roomTiteJFA8bit_Example.yy",},},
