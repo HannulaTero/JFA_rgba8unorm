@@ -1,24 +1,102 @@
+========================================================
 
 JUMP FLOOD ALGORITHM - RGBA8UNORM
-	by Tero Hannula for Cookbook jam.
+	Written for Cookbook jam.
+	By Tero Hannula
+	
+========================================================
 
-Dimensions must be between 1 to 256, as values are stored 8bit accuracy.
-	- Maximum size is then 256 x 256. 
-	- Given seed texture is scaled down.
+MIT License
 
-Coordinate is XY coordinate to closest seed value.
+Copyright (c) 2024 Tero Hannula
 
-Signed distance positive is how far outside the seed, and negative how far inside the seed.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Surfaces:
-	temp	General helper surface for calculations. Kept alive to avoid recreating.
-	coord	Coordinate mapping. 
-			-> Closest coordinates for seed are stored in RG components.
-			-> Closest coordinates for reverse seed are stored in BA components.
-	fill	Fills empty areas with seed, which approximates Voronoi Diagram.
-	field	Normal and signed distance field. 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+========================================================
+
+HOW TO USE
+
+1)	Create struct in Create-event.
+		flooder = new TiteJFA8bit(256, 256);
+
+2)	Set optional parameters with Params and Enable.
+	Params will set threshold and how far flood can happen.
+	Enabled manages, which extra optional information is generated.
+		flooder.Params(0.95, 64.0);
+		flooder.Enable(true, true, true);
+
+3)	Have surface which acts as seed texture.
+	You can draw whatever in seed, thresholded 
+	alpha-value determines whether seed or not.
+		seed = surface_create(256, 256);	
+
+4)	Call Update in Draw-event and give seed surface.
+	Generates coordinate mapping + other enabled information.
+		flooder.Update(seed);
+		
+5)	Now you have generated different mappings from given seed, which can be utilized.
+	To draw thick outline, you can use distance from field-surface.
+		draw_surface(flooder.surfaces.coord,	0, 0);
+		draw_surface(flooder.surfaces.fill,		256, 0);
+		draw_surface(flooder.surfaces.field,	512, 0);
+		draw_surface(flooder.surfaces.vertex,	768, 0);
+
+6)	Free all surfaces from flooder with Free-method.
+		flooder.Free();
+
+
+========================================================
+
+GENERAL CONSIDERATIONS & INFO
 
 Method calls should be done in Draw-events, as this uses shaders for calculations.
 
-Uses builder pattern.
-	- Methods return struct itself, so mehtod calls can be chained.
+Regular coordinate mapping is XY coordinate to closest seed value.
+Reverse coordinate mapping is XY coordinate to closest reversed seed value.
+Signed distance positive is how far outside the seed, and negative how far inside the seed.
+
+Surfaces use rgba8unorm, so each component is 8 bit value.
+ - One pixel encodes two XY coordinates: regular and reverse mapping.
+ - Each component can hold value 0 to 255, as they are 8bit value.
+ - Shaders read and store 8bit value as normalized into range 0 to 1.
+ - Surface maximum size is 256 x 256.
+ - Surface minimum size is 1 x 1.
+
+Surfaces:
+ - temp		General helper surface for calculations. This is kept alive to avoid recreating.
+ - coord	Coordinate mapping, holds both regular and reverse mapping.
+			 - XY: Regular mapping.
+			 - ZW: Reverse mapiing.
+ - fill		Fills empty areas with seed, which approximates Voronoi Diagram.
+ - field	Normal and signed distance field. 
+ - vertex	If voronoi diagram would be triangulated, where vertices would be.
+
+Update -method always redoes coordinate mapping with given seed. 
+ - There are optional actions: fill, field & vertex
+ - These can be toggled by Enable -method.
+	
+Params -method allow changing threshold value
+ - Defines threshold which is considered regular seed, or reverse seed.  
+
+Constructor uses builder pattern.
+ - Methods return struct itself.
+ - This allows chaining method calls.
+
+
+========================================================

@@ -4,7 +4,7 @@
 /// @param	{Real}	_w
 /// @param	{Real}	_h
 /// @Return	{Struct.TiteJFA}
-function TiteJFA8bit(_w=1, _h=1) constructor 
+function TiteJFA8bit(_w=256, _h=256) constructor 
 {
 //==========================================================
 //
@@ -26,7 +26,7 @@ function TiteJFA8bit(_w=1, _h=1) constructor
 	self.enable = {
 		fill:	true,
 		field:	true,
-		vertex:	true
+		vertex:	false
 	};
 	
 	// Set to wanted shape.
@@ -41,7 +41,7 @@ function TiteJFA8bit(_w=1, _h=1) constructor
 	
 	
 	// User handle: Reshape surfaces.
-	static Reshape = function(_w=1, _h=1) 
+	static Reshape = function(_w=256, _h=256) 
 	{
 		// Reshape dimensions.
 		self.width	= clamp(ceil(_w), 1, 256);
@@ -70,7 +70,7 @@ function TiteJFA8bit(_w=1, _h=1) constructor
 	
 	
 	// User handle: Which actions are executed when updating.
-	static Enable = function(_fill=true, _field=true, _vertex=true) 
+	static Enable = function(_fill=true, _field=true, _vertex=false) 
 	{
 		self.enable.fill = _fill;
 		self.enable.field = _field;
