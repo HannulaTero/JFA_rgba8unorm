@@ -1,7 +1,7 @@
 ========================================================
 
 JUMP FLOOD ALGORITHM - RGBA8UNORM
-	Written for Cookbook jam.
+	Written for GameMaker Cookbook jam.
 	By Tero Hannula
 	
 ========================================================
@@ -40,6 +40,9 @@ HOW TO USE
 ========================================================
 
 GENERAL CONSIDERATIONS & INFO
+
+This library is for GameMaker (check gamemaker.io)
+ - Made and tested with version: IDE v2023.11.1.129, Runtime v2023.11.1.160. 
 
 Method calls should be done in Draw-events, as this uses shaders for calculations.
 
