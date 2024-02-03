@@ -8,8 +8,10 @@ if (!surface_exists(seedSurf))
 
 // Mouse position related to seed. 
 // Assmumes it is drawn at x/y position, also rescaled.
-var _x = (mouse_x - x) * seedW / image_xscale;
-var _y = (mouse_y - y) * seedH / image_yscale;
+var _mouseX = device_mouse_x_to_gui(0);
+var _mouseY = device_mouse_y_to_gui(0);
+var _x = (_mouseX - x) * seedW / image_xscale;
+var _y = (_mouseY - y) * seedH / image_yscale;
 
 // Edit the seed.
 surface_set_target(seedSurf);
@@ -37,8 +39,8 @@ surface_reset_target();
 
 
 // Visualize mouse.
-draw_circle_color(mouse_x, mouse_y, radius+2, color, color, true);
-draw_circle_color(mouse_x, mouse_y, radius, c_black, c_black, true);
+draw_circle_color(_mouseX, _mouseY, radius+2, color, color, true);
+draw_circle_color(_mouseX, _mouseY, radius, c_black, c_black, true);
 
 
 
